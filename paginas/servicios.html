@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargar Servicio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        #menu ul {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding-left: 0;
+        }
+
+        #menu li {
+            display: inline;
+        }
+        /* Estilo para el mensaje de éxito */
+        #mensajeExito {
+            display: none;
+            background-color: #28a745;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 5px;
+            margin-top: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="d-flex justify-content-between align-items-center p-3 bg-light">
+        <div class="logo">Nombre de la Empresa</div>
+        <button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-expanded="false" aria-controls="menu">
+            &#9776;
+        </button>
+    </header>
+    <nav class="collapse" id="menu">
+        <ul class="list-unstyled bg-light p-2">
+            <li><a class="text-dark text-decoration-none" href="/index.html">inicio</a></li>
+            <li><a class="text-dark text-decoration-none" href="/paginas/productos.html">Productos</a></li>
+        </ul>
+    </nav>
+
+    <div class="container my-5">
+        <h2>Cargar un nuevo servicio</h2>
+        <form id="formularioServicio">
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" required>
+            </div>
+            <div class="mb-3">
+                <label for="apellido" class="form-label">Apellido</label>
+                <input type="text" class="form-control" id="apellido" required>
+            </div>
+            <div class="mb-3">
+                <label for="direccion" class="form-label">Dirección</label>
+                <input type="text" class="form-control" id="direccion" required>
+            </div>
+            <div class="mb-3">
+                <label for="telefono" class="form-label">Teléfono</label>
+                <input type="tel" class="form-control" id="telefono" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Correo Electrónico</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="descripcion" class="form-label">Descripción del Problema</label>
+                <textarea class="form-control" id="descripcion" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+
+        <!-- Mensaje de éxito -->
+        <div id="mensajeExito">
+            <p>Servicio enviado correctamente!</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Capturar el evento de envío del formulario
+        document.getElementById("formularioServicio").addEventListener("submit", function(event) {
+            event.preventDefault();  // Evita que se recargue la página al enviar el formulario
+
+            // Mostrar el mensaje de éxito
+            document.getElementById("mensajeExito").style.display = "block";
+
+            // Ocultar el formulario
+            document.getElementById("formularioServicio").reset();
+            document.getElementById("formularioServicio").style.display = "none";
+
+            // Redirigir a la página de inicio después de 3 segundos
+            setTimeout(function() {
+                window.location.href = "../index.html";
+            }, 3000);
+        });
+    </script>
+</body>
+</html>

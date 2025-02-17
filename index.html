@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PWA E-commerce</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Fuente base y fondo general */
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    /* Encabezado sticky */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: #007bff;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    header .logo {
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+    /* Menú de navegación */
+    #menu ul {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding-left: 0;
+      margin: 0;
+    }
+    #menu li {
+      display: inline;
+    }
+    #menu a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    #menu a:hover {
+      text-decoration: underline;
+    }
+    /* Banner con overlay */
+    .banner {
+      position: relative;
+      background: url('https://source.unsplash.com/random/800x400') no-repeat center center;
+      background-size: cover;
+      height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .banner::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+    }
+    .banner h1 {
+      position: relative;
+      color: #fff;
+      font-size: 2.5rem;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    /* Mensaje de éxito */
+    #mensajeExito {
+      display: none;
+      background-color: #28a745;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      border-radius: 5px;
+      margin-top: 20px;
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    /* Carousel: ajuste de imágenes */
+    .carousel-item img {
+      object-fit: cover;
+      height: 250px;
+      transition: transform 0.5s ease;
+    }
+    .carousel-item img:hover {
+      transform: scale(1.02);
+    }
+    @media (max-width: 768px) {
+      .carousel-item img {
+        height: 200px;
+      }
+    }
+    /* Espaciado adicional para secciones */
+    section {
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Encabezado -->
+  <header class="d-flex justify-content-between align-items-center">
+    <div class="logo">Nombre de la Empresa</div>
+    <button class="btn btn-light d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-expanded="false" aria-controls="menu">
+      &#9776;
+    </button>
+  </header>
+
+  <!-- Menú de navegación -->
+  <nav class="collapse" id="menu">
+    <ul class="bg-light p-2">
+      <li><a class="text-dark text-decoration-none" href="/paginas/servicios.html">Servicios</a></li>
+      <li><a class="text-dark text-decoration-none" href="/paginas/productos.html">Productos</a></li>
+    </ul>
+  </nav>
+
+  <!-- Banner -->
+  <section class="banner">
+    <h1>"Tu solución confiable"</h1>
+  </section>
+
+  <!-- Carousel de Productos/Secciones -->
+  <section id="productos" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="/img/tecnico.jpg" alt="Servicios" class="d-block w-100 rounded">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Servicios</h5>
+          <p>Ofrecemos una amplia gama de servicios especializados en reparación de electrodomésticos.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="/img/almacen.jpg" alt="Repuestos" class="d-block w-100 rounded">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Repuestos</h5>
+          <p>Encuentra los repuestos de mayor calidad para tus electrodomésticos, con la mejor garantía.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="/img/quienes-somos.jpeg" alt="Nosotros" class="d-block w-100 rounded">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Nosotros</h5>
+          <p>Conoce nuestro equipo de expertos dedicados a brindarte soluciones rápidas y efectivas.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#productos" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#productos" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Siguiente</span>
+    </button>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
