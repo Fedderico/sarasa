@@ -11,7 +11,8 @@
     /* Fuente base y fondo general */
     body {
       font-family: 'Roboto', sans-serif;
-      background-color: #f4f4f4;
+      background: rgb(33,177,0);
+      background: linear-gradient(0deg, rgba(33,177,0,1) 0%, rgba(255,255,255,1) 100%);
       margin: 0;
       padding: 0;
     }
@@ -20,11 +21,12 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background-color: #007bff;
+      background: rgb(255,0,0);
+      background: linear-gradient(180deg, rgba(255,0,0,1) 0%, rgba(255,255,255,1) 100%);
       color: #fff;
       padding: 15px;
       text-align: center;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      
     }
     header .logo {
       font-size: 1.5rem;
@@ -52,23 +54,14 @@
     /* Banner con overlay */
     .banner {
       position: relative;
-      background: url('https://source.unsplash.com/random/800x400') no-repeat center center;
-      background-size: cover;
       height: 400px;
+      background: rgb(255,255,255);
+      background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(0,194,6,1) 100%);
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
       margin-bottom: 30px;
-    }
-    .banner::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.4);
     }
     .banner h1 {
       position: relative;
@@ -114,7 +107,7 @@
 <body>
   <!-- Encabezado -->
   <header class="d-flex justify-content-between align-items-center">
-    <div class="logo">Nombre de la Empresa</div>
+    <div class="logo">Frada</div>
     <button class="btn btn-light d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-expanded="false" aria-controls="menu">
       &#9776;
     </button>
